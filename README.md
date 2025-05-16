@@ -13,4 +13,5 @@ Marcar como lida e/ou apagar.
 
 ## Autor
 
-Sara Santos - 8177536 — sarareginasantos1012@gmail.com
+Sara Santos - 8177536 — sarareginasantos1012@gmail.com 
+[GitHub](https://github.com/Sara-Santos1012)

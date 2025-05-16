@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notificações</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="apagarTodasNotificacoes()" color="danger">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Título</ion-label>
+    <ion-input [(ngModel)]="titulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Mensagem</ion-label>
+    <ion-textarea [(ngModel)]="mensagem"></ion-textarea>
+  </ion-item>
+  <ion-button expand="full" (click)="adicionarNotificacao()"
+    >Adicionar Notificação</ion-button
+  >
+
+  <ion-list>
+    <ion-item
+      *ngFor="let notif of notificacoes"
+      [class.lida]="notif.lida === 1"
+    >
+      <ion-label>
+        <h2>{{ notif.titulo }}</h2>
+        <p>{{ notif.mensagem }}</p>
+        <small>{{ notif.data }}</small>
+      </ion-label>
+      <ion-button
+        *ngIf="notif.lida === 0"
+        fill="clear"
+        slot="end"
+        (click)="marcarComoLido(notif.id)"
+      >
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
